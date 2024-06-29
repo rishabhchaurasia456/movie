@@ -43,12 +43,23 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2>{movie.title}</h2>
-      <img src={movie.big_image} alt={movie.title} />
-      <p>{movie.description}</p>
-      <p>Genres: {movie.genre.join(', ')}</p>
-      <p>Rating: {movie.rating}</p>
-      <a href={movie.imdb_link} target="_blank" rel="noopener noreferrer">IMDb Link</a>
+        <div className='container'>
+            <div className='row'>
+                <div className='col-md-6'>
+                    <img src={movie.big_image} alt={movie.title} />
+                </div>
+                <div className='col-md-6'>
+                    <h1>{movie.title}</h1>
+                    <p>Genres: {movie.genre.join(', ')}</p>
+                    <p>Rating: {movie.rating}</p>
+                    <a href={movie.imdb_link} target="_blank" rel="noopener noreferrer">IMDb Link</a>
+                </div>
+            </div>
+            <div className='row'>
+                <h5>Description</h5>
+                <p>{movie.description}</p>
+            </div>
+        </div>     
     </div>
   );
 };
